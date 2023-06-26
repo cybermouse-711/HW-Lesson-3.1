@@ -5,7 +5,7 @@
 //  Created by Елизавета Медведева on 26.06.2023.
 //
 
-class Animations {
+final class Animations {
     
     static let shared = Animations()
     

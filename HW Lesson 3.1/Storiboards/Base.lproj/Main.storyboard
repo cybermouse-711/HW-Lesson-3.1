@@ -104,7 +104,7 @@
                         <outlet property="delayLabel" destination="VGb-ER-YWT" id="tRX-5q-cdy"/>
                         <outlet property="durationLabel" destination="Bea-1Y-iQ0" id="kkK-VJ-yCI"/>
                         <outlet property="forceLabel" destination="gb5-t3-9z1" id="szE-EG-DnF"/>
-                        <outlet property="titleAnimationLabel" destination="Md5-ta-PIh" id="44E-Ws-q6D"/>
+                        <outlet property="presetLabel" destination="Md5-ta-PIh" id="44E-Ws-q6D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

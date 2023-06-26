@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var animationView: UIView!
     
-    @IBOutlet var titleAnimationLabel: UILabel!
+    @IBOutlet var presetLabel: UILabel!
     @IBOutlet var curveLabel: UILabel!
     @IBOutlet var forceLabel: UILabel!
     @IBOutlet var durationLabel: UILabel!
