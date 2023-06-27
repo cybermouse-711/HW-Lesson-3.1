@@ -9,14 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet var animationView: UIView!
     
-    @IBOutlet var presetLabel: UILabel!
-    @IBOutlet var curveLabel: UILabel!
-    @IBOutlet var forceLabel: UILabel!
-    @IBOutlet var durationLabel: UILabel!
-    @IBOutlet var delayLabel: UILabel!
+    @IBOutlet var animationLabel: [UILabel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -100,11 +100,11 @@
                     </view>
                     <connections>
                         <outlet property="animationView" destination="rx6-hx-xmx" id="wYy-Mt-j3H"/>
-                        <outlet property="curveLabel" destination="gb5-t3-9z1" id="RV0-yn-cBJ"/>
-                        <outlet property="delayLabel" destination="VGb-ER-YWT" id="tRX-5q-cdy"/>
-                        <outlet property="durationLabel" destination="Bea-1Y-iQ0" id="kkK-VJ-yCI"/>
-                        <outlet property="forceLabel" destination="gb5-t3-9z1" id="szE-EG-DnF"/>
-                        <outlet property="presetLabel" destination="Md5-ta-PIh" id="44E-Ws-q6D"/>
+                        <outletCollection property="animationLabel" destination="Md5-ta-PIh" collectionClass="NSMutableArray" id="EHz-Mh-Do4"/>
+                        <outletCollection property="animationLabel" destination="Xmi-OA-dOM" collectionClass="NSMutableArray" id="6ce-uo-dy4"/>
+                        <outletCollection property="animationLabel" destination="gb5-t3-9z1" collectionClass="NSMutableArray" id="qCJ-Tu-jWS"/>
+                        <outletCollection property="animationLabel" destination="Bea-1Y-iQ0" collectionClass="NSMutableArray" id="dzT-sI-kV0"/>
+                        <outletCollection property="animationLabel" destination="VGb-ER-YWT" collectionClass="NSMutableArray" id="4UQ-eA-qGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
