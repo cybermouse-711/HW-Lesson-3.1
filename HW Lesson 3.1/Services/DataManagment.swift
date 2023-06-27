@@ -9,8 +9,8 @@ final class Animations {
     
     static let shared = Animations()
     
-    let preset = ["preset"]
-    let curve = ["curve"]
+    let preset = ["pop", "fadeIn", "shake", "squeeze", "wobble"]
+    let curve = ["linear", "spring", "easeIn"]
     
     private init() {}
 }
