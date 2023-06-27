@@ -6,28 +6,40 @@
 //
 
 import UIKit
+import SpringAnimation
 
 struct Animation {
     
     let preset: String
     let curve: String
     
-    var force: Double {
-        Double.random(min: 0.5, max: 0.9)
-    }
-    var duration: Double {
-        0
-    }
-    var delay: Double {
-        0
-    }
+    let force: Double
+    let duration: Double
+    let delay: Double
+    
 }
 
 extension Animation {
     static func getAnimation() -> [Animation] {
         
-        let preset = Animations.shared.preset
-        let curve = Animations.shared.curve
+        var animation: [Animation] = []
         
+        let preset = Animations.shared.preset.shuffled()
+        let curve = Animations.shared.curve.shuffled()
+        //let force = Double.random(in: 1..<1.5)
+        //let duration = Double.random(in: 1..<1.5)
+        //let delay = Double.random(in: 0.5..<1)
+        
+        for varible in 0...Animations.shared.preset.count {
+            let oneAnimation = Animation(
+                preset: preset[varible],
+                curve: curve[varible],
+                force = 1,
+                duration = 1,
+                delay = 1
+            )
+            animation.append(oneAnimation)
+        }
+        return animation
     }
 }
