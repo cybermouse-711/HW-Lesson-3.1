@@ -74,7 +74,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Run">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -100,11 +100,11 @@
                     </view>
                     <connections>
                         <outlet property="animationView" destination="rx6-hx-xmx" id="wYy-Mt-j3H"/>
-                        <outletCollection property="animationLabel" destination="Md5-ta-PIh" collectionClass="NSMutableArray" id="EHz-Mh-Do4"/>
-                        <outletCollection property="animationLabel" destination="Xmi-OA-dOM" collectionClass="NSMutableArray" id="6ce-uo-dy4"/>
-                        <outletCollection property="animationLabel" destination="gb5-t3-9z1" collectionClass="NSMutableArray" id="qCJ-Tu-jWS"/>
-                        <outletCollection property="animationLabel" destination="Bea-1Y-iQ0" collectionClass="NSMutableArray" id="dzT-sI-kV0"/>
-                        <outletCollection property="animationLabel" destination="VGb-ER-YWT" collectionClass="NSMutableArray" id="4UQ-eA-qGJ"/>
+                        <outlet property="curveLabel" destination="Xmi-OA-dOM" id="Dye-Yb-GdN"/>
+                        <outlet property="delayLabel" destination="VGb-ER-YWT" id="OX6-xE-UkS"/>
+                        <outlet property="durationLabeel" destination="Bea-1Y-iQ0" id="FvS-Um-EUp"/>
+                        <outlet property="forceLabel" destination="gb5-t3-9z1" id="nri-ef-cYQ"/>
+                        <outlet property="presetLabel" destination="Md5-ta-PIh" id="qlP-EV-4eN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

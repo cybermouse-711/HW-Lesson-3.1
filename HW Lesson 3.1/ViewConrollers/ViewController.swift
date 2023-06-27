@@ -6,20 +6,50 @@
 //
 
 import UIKit
+import SpringAnimation
 
 class ViewController: UIViewController {
     
-    @IBOutlet var animationView: UIView!
+    @IBOutlet var animationView: SpringView!
+
+    @IBOutlet var presetLabel: UILabel!
+    @IBOutlet var curveLabel: UILabel!
+    @IBOutlet var forceLabel: UILabel!
+    @IBOutlet var durationLabeel: UILabel!
+    @IBOutlet var delayLabel: UILabel!
     
-    @IBOutlet var animationLabel: [UILabel]!
+    private let animation = Animation.getAnimation()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func animationButton(_ sender: UIButton) {
+        
+        
+        animationView.getAnimationView()
         
     }
+}
 
-
-    @IBAction func animationButton(_ sender: UIButton) {
+private extension SpringView {
+    func getAnimationView() {
+       let animationView = SpringView()
+        animationView.animation = ""
+        animationView.curve = ""
+        animationView.force = 1
+        animationView.duration = 1
+        animationView.delay = 1
+        animationView.animate()
     }
 }
+
+private extension ViewController {
+    func getNameLabel() {
+        presetLabel.text = "animation: \(animation[0])"
+        curveLabel.text = "curve: \(animation[1])"
+        forceLabel.text = "force: \(animation[2])"
+        durationLabeel.text = "duration: \(animation[3])"
+        delayLabel.text = "delay: \(animation[4])"
+    }
+    
+}
+
+
 
