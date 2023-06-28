@@ -23,7 +23,14 @@ final class ViewController: UIViewController {
         currentAnimation = nextAnimation
         nextAnimation = Animation.getAnimation()
         
-        animationView.getAnimationView(wich: currentAnimation)
+        //animationView.getAnimationView(wich: currentAnimation)
+        
+        animationView.animation = currentAnimation.preset
+        animationView.curve = currentAnimation.curve
+        animationView.force = currentAnimation.force
+        animationView.duration = currentAnimation.duration
+        animationView.delay = currentAnimation.delay
+        animationView.animate()
         
         arrayLabel[0].text = currentAnimation.preset
         arrayLabel[1].text = currentAnimation.curve
@@ -46,17 +53,6 @@ extension SpringView {
         animationView.duration = animation.duration
         animationView.delay = animation.delay
         animationView.animate()
-    }
-}
-
-extension ViewController {
-    func getNameLabel(wich animation: Animation) {
-            
-        arrayLabel[0].text = animation.preset
-        arrayLabel[1].text = animation.curve
-        arrayLabel[2].text = String(format: "%.1f", animation.force)
-        arrayLabel[3].text = String(format: "%.1f", animation.duration)
-        arrayLabel[4].text = String(format: "%.1f", animation.delay)
     }
 }
 
