@@ -23,22 +23,19 @@ extension Animation {
         
         var animation: [Animation] = []
         
-        let preset = Animations.shared.preset.shuffled()
-        let curve = Animations.shared.curve.shuffled()
-        var force = 0.0
-        var duration = 0.0
-        var delay = 0.0
+        let preset = Animations.shared.preset
+        let curve = Animations.shared.curve
         
-        for varible in 0...Animations.shared.preset.count {
+        for _ in 0...Animations.shared.preset.count {
             let currrentAnimation = Animation(
-                preset: preset[varible],
-                curve: curve[varible],
-                force: force(Double.random(in: 1..<1.5)),
-                duration: duration(Double.random(in: 1..<1.5)),
-                delay: delay(Double.random(in: 0.5..<1))
+                preset: preset.randomElement() ?? "",
+                curve: curve.randomElement() ?? "",
+                force: Double.random(in: 1..<1.5),
+                duration: Double.random(in: 1..<1.5),
+                delay: Double.random(in: 0.5..<1)
             )
             animation.append(currrentAnimation)
         }
         return animation
     }
-}
+ }

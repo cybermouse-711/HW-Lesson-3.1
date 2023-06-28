@@ -45,16 +45,14 @@ final class ViewController: UIViewController {
 }
 
 private extension SpringView {
-    func getAnimationView(wich animation: [Animation]) {
-        
-        let index = animation.count
+    func getAnimationView(wich animation: Animation) {
         
        let animationView = SpringView()
-        animationView.animation = animation[index].preset
-        animationView.curve = animation[index].curve
-        animationView.force = animation[index].force
-        animationView.duration = animation[index].duration
-        animationView.delay = animation[index].delay
+        animationView.animation = animation.preset
+        animationView.curve = animation.curve
+        animationView.force = animation.force
+        animationView.duration = animation.duration
+        animationView.delay = animation.delay
         animationView.animate()
     }
 }
