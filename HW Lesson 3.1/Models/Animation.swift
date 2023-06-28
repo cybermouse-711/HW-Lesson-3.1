@@ -19,14 +19,11 @@ struct Animation {
 }
 
 extension Animation {
-    static func getAnimation() -> [Animation] {
-        
-        var animation: [Animation] = []
+    static func getAnimation() -> Animation {
         
         let preset = Animations.shared.preset
         let curve = Animations.shared.curve
         
-        for _ in 0...Animations.shared.preset.count {
             let currrentAnimation = Animation(
                 preset: preset.randomElement() ?? "",
                 curve: curve.randomElement() ?? "",
@@ -34,8 +31,6 @@ extension Animation {
                 duration: Double.random(in: 1..<1.5),
                 delay: Double.random(in: 0.5..<1)
             )
-            animation.append(currrentAnimation)
-        }
-        return animation
+        return currrentAnimation
     }
  }
