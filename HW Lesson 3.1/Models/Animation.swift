@@ -26,19 +26,19 @@ extension Animation {
         
         let preset = Animations.shared.preset.shuffled()
         let curve = Animations.shared.curve.shuffled()
-        //let force = Double.random(in: 1..<1.5)
-        //let duration = Double.random(in: 1..<1.5)
-        //let delay = Double.random(in: 0.5..<1)
+        var force = 0.0
+        var duration = 0.0
+        var delay = 0.0
         
         for varible in 0...Animations.shared.preset.count {
-            let oneAnimation = Animation(
+            let currrentAnimation = Animation(
                 preset: preset[varible],
                 curve: curve[varible],
-                force = 1,
-                duration = 1,
-                delay = 1
+                force: force(Double.random(in: 1..<1.5)),
+                duration: duration(Double.random(in: 1..<1.5)),
+                delay: delay(Double.random(in: 0.5..<1))
             )
-            animation.append(oneAnimation)
+            animation.append(currrentAnimation)
         }
         return animation
     }
