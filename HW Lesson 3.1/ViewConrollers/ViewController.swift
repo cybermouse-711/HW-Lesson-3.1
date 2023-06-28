@@ -12,15 +12,14 @@ class ViewController: UIViewController {
     
     @IBOutlet var animationView: SpringView!
 
-    @IBOutlet var presetLabel: UILabel!
-    @IBOutlet var curveLabel: UILabel!
-    @IBOutlet var forceLabel: UILabel!
-    @IBOutlet var durationLabeel: UILabel!
-    @IBOutlet var delayLabel: UILabel!
+    @IBOutlet var arrayLabel: [UILabel]!
     
-    private let animation = Animation.getAnimation()
+    private let currentAnimation = Animation.getAnimation()
+    private let nextAnimation = Animation.getAnimation()
+    
     
     @IBAction func animationButton(_ sender: UIButton) {
+        
         
         
         animationView.getAnimationView()
@@ -30,7 +29,8 @@ class ViewController: UIViewController {
 
 private extension SpringView {
     func getAnimationView() {
-       let animationView = SpringView()
+        
+       let animationView = SpringView() //Не могу унаследоваться от массива
         animationView.animation = ""
         animationView.curve = ""
         animationView.force = 1
@@ -41,14 +41,16 @@ private extension SpringView {
 }
 
 private extension ViewController {
-    func getNameLabel() {
-        presetLabel.text = "animation: \(animation[0])"
-        curveLabel.text = "curve: \(animation[1])"
-        forceLabel.text = "force: \(animation[2])"
-        durationLabeel.text = "duration: \(animation[3])"
-        delayLabel.text = "delay: \(animation[4])"
+    func getNameLabel(wich animation: [Animation]) {
+        
+        for (label, varible) in zip(arrayLabel, animation) {
+            label.text = varible.preset
+            label.text = varible.curve
+            label.text = String(varible.force)
+            label.text = String(varible.duration)
+            label.text = String(varible.delay)
+        }
     }
-    
 }
 
 
