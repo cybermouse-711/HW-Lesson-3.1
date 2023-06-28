@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SpringAnimation
 
 struct Animation {
     

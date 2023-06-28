@@ -8,7 +8,11 @@
 import UIKit
 import SpringAnimation
 
-class ViewController: UIViewController {
+enum ChangeAnimation {
+    case current, next
+}
+
+final class ViewController: UIViewController {
     
     @IBOutlet var animationView: SpringView!
 
@@ -17,25 +21,40 @@ class ViewController: UIViewController {
     private let currentAnimation = Animation.getAnimation()
     private let nextAnimation = Animation.getAnimation()
     
+    private let changeAnimation = ChangeAnimation.current
     
-    @IBAction func animationButton(_ sender: UIButton) {
+    
+    
+    @IBAction func animatedButton(_ sender: UIButton) {
         
-        
-        
-        animationView.getAnimationView()
-        
+        switch changeAnimation {
+            
+        case .current:
+            animationView.getAnimationView(wich: currentAnimation)
+            arrayLabel.getNameLabel(wich: currentAnimation)
+            sender.titleLabel = "Next: \(nextAnimation.first)"
+            changeAnimation = .next
+            
+        case .next:
+            animationView.getAnimationView(wich: nextAnimation)
+            arrayLabel.getNameLabel(wich: nextAnimation)
+            sender.titleLabel = "Next: \(currentAnimation.first)"
+            changeAnimation = .current
+        }
     }
 }
 
 private extension SpringView {
-    func getAnimationView() {
+    func getAnimationView(wich animation: [Animation]) {
         
-       let animationView = SpringView() //Не могу унаследоваться от массива
-        animationView.animation = ""
-        animationView.curve = ""
-        animationView.force = 1
-        animationView.duration = 1
-        animationView.delay = 1
+        let index = animation.count
+        
+       let animationView = SpringView()
+        animationView.animation = animation[index].preset
+        animationView.curve = animation[index].curve
+        animationView.force = animation[index].force
+        animationView.duration = animation[index].duration
+        animationView.delay = animation[index].delay
         animationView.animate()
     }
 }
@@ -52,6 +71,4 @@ private extension ViewController {
         }
     }
 }
-
-
 
